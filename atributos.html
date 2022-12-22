@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        #square {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .quadrado {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+            align-items:center ;
+            font-weight: bold;
+            padding: 20px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+            transition: 1s;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .quadrado1 {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+            align-items:center ;
+            font-weight: bold;
+            padding: 80px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+            transition: 500ms;
+            cursor: pointer;
+            transform: rotate(calc(2*360deg));
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="square">Clica aqui rapidinho</div>
+
+    <script>
+        let square = document.getElementById("square");
+
+        square.addEventListener('mouseenter', function(){
+
+            square.style = "color: #fff"
+            square.setAttribute("class","quadrado")
+            square.innerHTML = "<h1>Te enganei</h1>"
+            
+        })
+
+        square.addEventListener("click", function() {
+            square.innerHTML = "<h1>Muito rápido 😵‍💫</h1>"
+            
+            square.setAttribute("class","quadrado1")
+        })
+
+        square.addEventListener("dblclick", function() {
+            square.style = "color: #000";
+            square.removeAttribute("class");
+            square.innerHTML = "<h1>Chato 🙄</h1>"
+        })
+    </script>
+</body>
+</html>
